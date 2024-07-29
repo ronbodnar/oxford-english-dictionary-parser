@@ -24,16 +24,16 @@ To run the script, you need to have Python 3 and the required packages installed
 
 1. **Clone the Repository:**
 
-    ~bash
+    ```bash
     git clone https://github.com/ronbodnar/oed-word-parser.git
     cd oed-word-parser
-    ~
+    ```
 
 2. **Install Dependencies:**
 
-    ~bash
+    ```bash
     pip install -r requirements.txt
-    ~
+    ```
 
 3. **Set Up the Environment:**
 
@@ -43,9 +43,9 @@ To run the script, you need to have Python 3 and the required packages installed
 
 Run the script using the following command:
 
-~bash
+```bash
 python script_name.py --request-delay 2 --max-pages 100 --starting-page 1 --output-file results.txt
-~
+```
 
 **Arguments:**
 
@@ -58,9 +58,9 @@ python script_name.py --request-delay 2 --max-pages 100 --starting-page 1 --outp
 
 To start parsing from page 1, with a delay of 2 seconds between requests, and save results to `parsed_data.txt`, use:
 
-~bash
+```bash
 python oed-word-parser.py --request-delay 2 --max-pages 50 --starting-page 1 --output-file parsed_data.txt
-~
+```
 
 ## Contributing
 
