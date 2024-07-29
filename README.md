@@ -1,6 +1,6 @@
 # OED Word Parser
 
-**OED Word Parser** is a Python script designed to scrape and analyze word data from the Oxford English Dictionary (OED) website. This tool allows for efficient extraction of words, snippets, and parts of speech from OED search pages, with customizable settings for pagination and request delays.
+**OED Word Parser** is a Python-based tool designed to scrape and parse English word data from the Oxford English Dictionary (OED) website. This project provides a robust solution for extracting and managing word-related information, including definitions, snippets, and parts of speech. It’s particularly useful for linguists, language enthusiasts, and developers working with English language datasets.
 
 ## Table of Contents
 
@@ -44,7 +44,7 @@ To run the script, you need to have Python 3 and the required packages installed
 Run the script using the following command:
 
 ```bash
-python script_name.py --request-delay 2 --max-pages 100 --starting-page 1 --output-file results.txt
+python oed-word-parser.py --request-delay 2 --max-pages 100 --starting-page 1 --output-file results.txt
 ```
 
 **Arguments:**
