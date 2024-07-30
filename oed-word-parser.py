@@ -195,10 +195,7 @@ def get_parsed_content(content):
     # Check if there is any mismatch in the lengths of all_words, all_snippets, and all_parts_of_speech
     if len(all_words) != len(all_snippets) and len(all_snippets) != len(all_parts_of_speech):
         return None
-    
-    # Outputting the number of words, snippets, and parts of speech found. (make --verbose)
-    #print(f'Words: {len(all_words)}\tSnippets: {len(all_snippets)}\tParts of Speech: {len(all_parts_of_speech)}')
-    
+
     return all_words, all_snippets, all_parts_of_speech
 
 def start_parsing(starting_page, max_pages, max_retries, request_delay, error_delay, output_file, delimiter):
