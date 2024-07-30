@@ -117,12 +117,16 @@ def fetch_content(page, error_delay, max_retries, retry = False):
         # Calculate the elapsed response time in seconds.
         elapsed_secs = time.time() - start
         
+        # Store the number of time we have retried a request.
+        num_retries = 0
+        
         # Handle cases where the response is not 200 (OK).
         if response.status_code != 200:
             print(f"Failed to retrieve content for page {page} after {elapsed_secs:.3f} seconds. Status code: {response.status_code}", end="")
-            if not retry:
+            if not retry and num_retries <= max_retries:
                 print(f" | Retrying after {error_delay} seconds...")
                 time.sleep(error_delay)
+                num_retries += 1
                 return fetch_content(page, error_delay, max_retries, True)
             else:
                 print(" | Retrying to fetch content failed.")
@@ -149,6 +153,7 @@ def get_parsed_content(content):
     content (str): The HTML content to parse.
 
     Returns:
+    None: When None content is received.
     tuple: A tuple containing three lists:
         - all_words (list of str): List of extracted words.
         - all_snippets (list of str): List of extracted snippets.
