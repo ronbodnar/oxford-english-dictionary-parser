@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 script_directory = os.path.dirname(os.path.abspath(__file__))
 
 # The output file path
-output_file = os.path.join(script_directory, 'output', 'oed-word-parser.txt')
+output_file = os.path.join(script_directory, 'output.txt')
 
 # Set up a requests Session to keep the connection to the server open while making requests.
 session = requests.Session()
@@ -52,7 +52,7 @@ def main():
     parser.add_argument('--starting-page', type=int, default=1, 
                         help='The page number to start parsing from (default: 1)')
     parser.add_argument('--output-file', type=str, default=output_file, 
-                        help='The full path of the output file (default: $script_dir/output/oed-word-parser.txt)')
+                        help='The full path of the output file (default: output.txt)')
     parser.add_argument('--delimiter', type=str, default=',', 
                         help='The delimiter for the output file. (default: `,`')
 
