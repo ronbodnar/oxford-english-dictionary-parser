@@ -179,7 +179,8 @@ def get_parsed_content(content):
         # Extract the snippet
         snippet_div = item.find('div', class_='snippet')
         if snippet_div:
-            all_snippets.append(f'"{snippet_div.get_text().strip().replace('\"', '\'')}"')
+            snippet = snippet_div.get_text().strip().replace('"', "'")
+            all_snippets.append(f'"{snippet}"')
         
         # Extract the part of speech
         ps_span = item.find('span', class_='ps')
