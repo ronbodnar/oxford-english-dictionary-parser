@@ -2,8 +2,9 @@
 .env
 
 # Ignore script output files.
-*.txt
-!requirements.txt
+parsed-data.txt
+
+*.csv
 
 # Ignore pycache
 __pycache__/*
