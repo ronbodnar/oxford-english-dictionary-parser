@@ -1,2 +1,9 @@
+# Environment secrets file
+.env
+
 # Ignore script output files.
-output.txt
+*.txt
+!requirements.txt
+
+# Ignore pycache
+__pycache__/*
