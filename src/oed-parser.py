@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 script_directory = os.path.dirname(os.path.abspath(__file__))
 
 # The output file path
-output_file = os.path.join(script_directory, '..', 'output.txt')
+output_file = os.path.join(script_directory, '..', 'data', 'output.txt')
 
 # Set up a requests Session to keep the connection to the server open while making requests.
 session = requests.Session()
@@ -233,6 +233,10 @@ def start_parsing(starting_page, max_pages, max_retries, request_delay, error_de
     for i in range(max_pages):
         # Parse the content that was fetched from the webpage.
         parsed_content = get_parsed_content(content)
+        
+        if len(parsed_content) == 0:
+            print(f'Found no words on the page, stopping.')
+            exit()
         
         # Check to see if the content was able to be parsed, if it was save it.
         if parsed_content is None:
