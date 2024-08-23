@@ -1,4 +1,5 @@
 import json
+import copy
 
 class Word:
     
@@ -8,4 +9,7 @@ class Word:
         self.parts_of_speech = args[2] if len(args) > 2 else ''
         
     def toJSON(self):
-        return json.dumps(self, default=lambda o: o.__dict__, indent=4)
+        dump = copy.deepcopy(self)
+        del dump.snippet
+        del dump.parts_of_speech
+        return json.dumps(dump, default=lambda o: o.__dict__, indent=4)
